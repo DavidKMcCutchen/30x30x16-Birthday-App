@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Birthdays</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let birthday of birthdays" data-test="birthday-list-item" (click)="selected.emit(birthday)">
+        <h3 matLine>{{birthday.title}}</h3>
+        <p matLine> Age: {{birthday.age}}</p>
+        <p matLine> Plans: {{birthday.plans}}</p>
+        <p matLine> Message: {{birthday.message}}</p>
+        
+        <button mat-icon-button (click)="birthdayViewed.emit(birthday.id); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">chevron_left</mat-icon>
+        </button>
+
+
+        <button mat-icon-button (click)="deleted.emit(birthday); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

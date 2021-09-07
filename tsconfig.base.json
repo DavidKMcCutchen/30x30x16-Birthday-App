@@ -13,9 +13,17 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
-      "@birthday-app/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@birthday-app/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@birthday-app/core-data": ["libs/core-data/src/index.ts"],
+      "@birthday-app/core-state": ["libs/core-state/src/index.ts"],
+      "@birthday-app/environment": ["libs/environment/src/index.ts"],
+      "@birthday-app/material": ["libs/material/src/index.ts"],
+      "@birthday-app/theme": ["libs/theme/src/index.ts"],
+      "@birthday-app/ui-login": ["libs/ui-login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

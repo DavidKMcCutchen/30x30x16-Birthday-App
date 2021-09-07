@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <birthday-app-birthday-list
+        [birthdays]="allBirthdays$ | async"
+        (selected)="selectBirthday($event)"
+        (deleted)="deleteBirthday($event)"
+        (birthdayViewed)="viewBirthday($event)"
+      ></birthday-app-birthday-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <birthday-app-birthday-details
+        [birthday]="selectedBirthday$ | async"
+        (saved)="saveBirthday($event)"
+        (cancelled)="resetBirthday()"
+        [form]="form"
+      ></birthday-app-birthday-details>
+    </div>
+  </div>
